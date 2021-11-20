@@ -37,7 +37,7 @@ UDEFS =
 UADEFS =
 
 # List source files here
-STDLIBDIR = c:/yagarto/cmsis_f4xx_v180
+STDLIBDIR = ./cmsis_f4xx_v180
 CORELIBDIR = $(STDLIBDIR)/_cmsis
 STDPHDRV_DIR = $(STDLIBDIR)/_f4xx_stdperiph_drv
 STDPHDRV_SRCDIR = $(STDPHDRV_DIR)/src
