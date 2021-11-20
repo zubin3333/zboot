@@ -1,3 +1,8 @@
+# Zubin Notes
+Building the firmware:
+```make V=1 -Bsj -f "_makefiles/Makefile.stm32f407"```
+Cleaning up the build:
+```make V=1 -Bsj -f "_makefiles/Makefile.stm32f407" clean```
 # zboot
 Generic STM32 serial bootloader, with a simple command-line interface
 
