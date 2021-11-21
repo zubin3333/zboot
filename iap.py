@@ -254,10 +254,15 @@ def ReadImage(ser):
 def scan(baudrate=None):
     '''scan for available ports '''
     ports = []
-    baudrates = [500000] if baudrate is None else [baudrate]
+    baudrates = [115200] if baudrate is None else [baudrate]
     if platform.system() == 'Linux':
         ports.extend(glob('/dev/ttyU*'))  # ttyUSB*
         ports.extend(glob('/dev/ttyA*'))  # ttyACM*
+    elif platform.system() == 'Darwin':
+        # Mac
+        # ports.extend(glob('/dev/tty*')) 
+        ports.extend(glob('/dev/cu.usbmodem*'))
+
     elif platform.system() == 'Windows':
         for i in range(32):
             try:
