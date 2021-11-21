@@ -227,7 +227,7 @@ void USART_Config(void)
             USARTx->BRR = 24000000UL / _BAUDRATE;
         #endif
     #else
-        USARTx->BRR = 32; // 16M / 32 = 500k
+        USARTx->BRR = 139; // 16M / 138 ~= 115.2K
     #endif
 
     #if !defined (STM32F10X_HD) && !defined (STM32F401xx) && !defined (STM32F10X_MD_VL) && !defined (STM32F40_41xxx)
