@@ -86,3 +86,4 @@ main_rom.bin
 *.bin
 *.t
 TAGS
+venv/
