@@ -3,6 +3,7 @@
 #include <stdbool.h>
 #include "usart.h"
 #include "iap.h"
+#include "core_cm4.h"
 
 enum {
     IAP_GET_MAX_APPSIZE = 0x80, IAP_READ_FLASH = 0x81, IAP_GET_APPSIZE = 0x82,
@@ -102,6 +103,7 @@ static unsigned long GetAppSize(void)
 
 void IAP_JumpToApp(void)
 {
+    SysTick->CTRL = SysTick->CTRL & ~(SysTick_CTRL_ENABLE_Msk);
     __disable_irq();
     func = (func_app)(*(volatile unsigned long*)(g.app_base + 4));
     __set_MSP(*(volatile unsigned long*)(g.app_base));
